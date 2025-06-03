@@ -8,11 +8,13 @@ import MyBooking from "../page/MyBooking";
 import AboutUs from "../page/AboutUs";
 import Register from "../page/Register";
 import LogIn from "../page/LogIn";
+import ErrorPage from "../page/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component:MainLayout,
+    errorElement: <ErrorPage></ErrorPage> ,
     children:[
         {
             index:true,
