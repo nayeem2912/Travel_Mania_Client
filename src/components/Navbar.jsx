@@ -38,6 +38,7 @@ const Navbar = () => {
        {links}
       </ul>
     </div>
+    <img className='w-10 mr-2 h-10' src="/airplane_2200326.png" alt="" />
     <a className="font-bold text-4xl">Travel <span className='text-[#0084ff]'>Mania</span></a>
     
   </div>
