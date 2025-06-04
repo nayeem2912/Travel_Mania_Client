@@ -17,9 +17,9 @@ const Navbar = () => {
         </li>
     </>
     return (
-        <div className='bg-base-100 shadow-sm'>
+        <div className='bg-base-300  z-50 sticky top-0 shadow-sm'>
             <div className="navbar w-11/12 mx-auto">
-  <div className="navbar-start">
+  <div className="navbar-start ">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="mr-2 lg:hidden">
   
@@ -38,7 +38,8 @@ const Navbar = () => {
        {links}
       </ul>
     </div>
-    <a className="font-bold text-3xl">Travel <span className='text-[#0084ff]'>Mania</span></a>
+    <a className="font-bold text-4xl">Travel <span className='text-[#0084ff]'>Mania</span></a>
+    
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -46,6 +47,9 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-3">
+    <div className=' ml-4'>
+      <input  type="checkbox" value="dark" className="toggle theme-controller w-10" />
+    </div>
     <Link to='/register'>
     <button className="btn btn-xs sm:btn-sm md:btn-md rounded-full  text-white font-semibold bg-[#0084ff] ">Register</button>
     </Link>
