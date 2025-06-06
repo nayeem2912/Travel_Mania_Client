@@ -1,7 +1,58 @@
-import React from 'react';
+import React, { use, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../context/AuthContext';
 
 const Register = () => {
+
+    const {createUser, setUser, updateUser} =use(AuthContext);
+      const[nameError, setNameError]= useState("")
+
+
+   const handleRegister = e =>{
+      e.preventDefault();
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      const name = form.name.value;
+      const photo = form.photo.value;
+
+       if (name.length < 5) {
+        setNameError("Name should be more then 5 character");
+        return;
+      } else {
+        setNameError("");
+      }
+      
+      createUser(email, password)
+      .then(result => {
+        const user = result.user;
+        updateUser({displayName: name, photoURL: photo})
+        .then(() => {
+           setUser({...user,displayName: name, photoURL: photo });
+          
+        })
+        .catch(error => {
+          setUser(user)
+          toast.error(error)
+        })
+        
+        if(user){
+          Swal.fire({
+  title: "Registration successful!",
+  icon: "success",
+  draggable: true
+});
+        }
+      })
+      .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+   toast(errorCode, errorMessage)
+  });
+   }
+
     return (
         <div className='my-12 p-10'>
              <div className='flex  justify-center items-center min-h-screen'>
@@ -10,7 +61,7 @@ const Register = () => {
      Let’s Get Started
     </h2>
     
-  <form  className="card-body">
+  <form onSubmit={handleRegister} className="card-body">
     <fieldset className="fieldset">
     
    <button className="btn rounded-full hover:bg-[#0084ff] bg-white text-black hover:text-white border-[#e5e5e5]">
@@ -21,9 +72,9 @@ const Register = () => {
 
       <label className="label font-bold text-gray-800 text-xl">Name</label>
       <input type="text" name='name' className="input bg-gray-50 text-gray-800 border-1 border-black" placeholder="Name" />
-      {/* {
+      {
         nameError && <p className="text-xs text-black">{nameError}</p>
-      } */}
+      }
       <label className="label font-bold text-gray-800 text-xl">Photo URL</label>
       <input type="text" name='photo' className="input bg-gray-50 text-gray-800 border-1 border-black" placeholder="Photo Url" />
       <label className="label font-bold text-gray-800 text-xl">Email</label>

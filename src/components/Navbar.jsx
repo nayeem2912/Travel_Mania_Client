@@ -1,7 +1,41 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../context/AuthContext';
+import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
+  const {user, logOut} = use(AuthContext)
+
+
+
+
+  const handleLogOut = () => {
+    
+       logOut()
+       .then(()=>{
+           Swal.fire({
+  title: "Logout successful!",
+  icon: "success",
+  draggable: true
+});
+       })
+       .catch(error =>{
+         toast(error)
+       })
+  }
+
+    const link = <>
+    <li>
+            <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/' >Home</NavLink>
+        </li>
+        <li>
+         <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/allPackage' >All Packages</NavLink>
+        </li>
+        <li>
+            <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/aboutUs' >About Us </NavLink>
+        </li>
+    </>
     const links = <>
        <li>
             <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/' >Home</NavLink>
@@ -44,19 +78,47 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      {links}
+      {
+        user ? links : link
+      }
     </ul>
   </div>
   <div className="navbar-end space-x-3">
     <div className=' ml-4'>
       <input  type="checkbox" value="dark" className="toggle theme-controller w-10" />
     </div>
-    <Link to='/register'>
+    {
+      user ? (<div className="flex gap-2">
+    <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img
+            alt="Tailwind CSS Navbar component"
+            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+        </div>
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li>
+         <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/addPackage' >Add Package</NavLink>
+        </li>
+        <li>
+           <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-lg ':'text-lg')} to='/managePackage' >Manage My Package</NavLink>
+        </li>
+        <li><a onClick={handleLogOut} className='font-bold text-red-700 text-lg'>Logout</a></li>
+      </ul>
+    </div>
+  </div>) : (<div>
+          <Link to='/register'>
     <button className="btn btn-xs sm:btn-sm md:btn-md rounded-full  text-white font-semibold bg-[#0084ff] ">Register</button>
     </Link>
     <Link to='/login'>
     <button className="btn btn-xs sm:btn-sm md:btn-md rounded-full  text-white font-semibold bg-[#0084ff] ">Login</button>
     </Link>
+  </div>)
+    }
+    
   </div>
 </div>
         </div>

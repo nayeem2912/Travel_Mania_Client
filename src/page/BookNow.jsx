@@ -7,8 +7,8 @@ const BookNow = () => {
 
 </h1>
 
- <div className='mt-10'>
-                <form  className='space-y-5 mb-10' >
+ <div className='mt-10 mb-20'>
+                <form  className='space-y-5 ' >
                 <div className='grid grid-cols-1  md:grid-cols-2 gap-6 '>
                     <fieldset className="fieldset bg-gray-50 text-gray-800 border border-base-300 rounded-box p-4">
   <label className="label font-bold text-lg">Package Name</label>

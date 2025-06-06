@@ -11,6 +11,8 @@ import LogIn from "../page/LogIn";
 import ErrorPage from "../page/ErrorPage";
 import PackageDetails from "../page/PackageDetails";
 import BookNow from "../page/BookNow";
+import AddPackage from "../page/AddPackage";
+import ManagePackage from "../page/ManagePackage";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +51,14 @@ export const router = createBrowserRouter([
         {
             path:'/bookNow',
             Component:BookNow,
+        },
+        {
+            path:'/addPackage',
+            Component:AddPackage,
+        },
+        {
+            path:'/managePackage',
+            Component:ManagePackage,
         },
     ]
   },
