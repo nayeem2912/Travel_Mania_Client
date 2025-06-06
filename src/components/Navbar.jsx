@@ -38,8 +38,8 @@ const Navbar = () => {
        {links}
       </ul>
     </div>
-    <img className='w-10 mr-2 h-10' src="/airplane_2200326.png" alt="" />
-    <a className="font-bold text-4xl">Travel <span className='text-[#0084ff]'>Mania</span></a>
+    <img className='md:w-10 mr-2 md:h-10 w-7 h-7' src="/airplane_2200326.png" alt="" />
+    <a className="font-bold text-lg md:text-4xl">Travel <span className='text-[#0084ff]'>Mania</span></a>
     
   </div>
   <div className="navbar-center hidden lg:flex">

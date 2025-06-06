@@ -19,7 +19,10 @@ const Banner = () => {
         From the serene beaches of Cox’s Bazar to the lush green hills of Sylhet, Bangladesh is a land of natural wonders and rich culture. Discover ancient heritage sites, vibrant cities, and hidden gems across the country. Whether you're planning a weekend escape or a cross-country adventure, let us be your guide to the unforgettable charm of Bangladesh.
       </p>
       <Link to='/allPackage'>
-       <button className="btn  md:btn-md border-none text-white lg:btn-lg font-semibold bg-[#0084ff] ">Explore All Packages</button>
+       <a  class="relative inline-block px-4 py-2 font-medium group"> 
+    <span class="absolute inset-0 w-full h-full bg-[#0084ff]  group-hover:bg-black"></span>
+    <span class="relative text-white group-hover:text-white">Explore All Packages</span>
+</a>
       </Link>
     </div>
   </div>

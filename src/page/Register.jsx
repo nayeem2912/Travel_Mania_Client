@@ -5,7 +5,7 @@ const Register = () => {
     return (
         <div className='my-12 p-10'>
              <div className='flex  justify-center items-center min-h-screen'>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl py-8">
+        <div className="card bg-gray-50 text-gray-800 border-1 border-black w-full max-w-sm shrink-0 shadow-xl py-8">
         <h2 className="font-semibold text-2xl text-center">
      Let’s Get Started
     </h2>
@@ -19,15 +19,15 @@ const Register = () => {
 </button>
 
 
-      <label className="label font-bold text-white text-xl">Name</label>
-      <input type="text" name='name' className="input" placeholder="Name" />
+      <label className="label font-bold text-gray-800 text-xl">Name</label>
+      <input type="text" name='name' className="input bg-gray-50 text-gray-800 border-1 border-black" placeholder="Name" />
       {/* {
         nameError && <p className="text-xs text-black">{nameError}</p>
       } */}
-      <label className="label font-bold text-white text-xl">Photo URL</label>
-      <input type="text" name='photo' className="input" placeholder="Photo Url" />
-      <label className="label font-bold text-white text-xl">Email</label>
-      <label className="input validator">
+      <label className="label font-bold text-gray-800 text-xl">Photo URL</label>
+      <input type="text" name='photo' className="input bg-gray-50 text-gray-800 border-1 border-black" placeholder="Photo Url" />
+      <label className="label font-bold text-gray-800 text-xl">Email</label>
+      <label className="input validator bg-gray-50 text-gray-800 border-1 border-black">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g
       strokeLinejoin="round"
@@ -44,8 +44,8 @@ const Register = () => {
 </label>
 <div className="validator-hint hidden">Enter valid email address</div> 
 
-<label className="label font-bold text-white text-xl">Password</label>
-<label className="input validator">
+<label className="label font-bold text-gray-800 text-xl">Password</label>
+<label className="input validator  bg-gray-50 text-gray-800 border-1 border-black  ">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g
       strokeLinejoin="round"
@@ -77,15 +77,15 @@ const Register = () => {
 </p>
 
       
-      <button type='submit' className="btn text-xl text-white bg-[#0084ff] mt-4">Register</button>
+      <button type='submit' className="btn text-xl text-white bg-[#0084ff] hover:bg-black mt-4">Register</button>
       <p className="font-semibold text-center pt-5">
           Already Have An Account ?{" "}
-          <Link className="text-[#0084ff] underline" to="/login">
+          <Link className="text-[#0084ff] link-hover" to="/login">
             Login
           </Link>
         </p>
       
-         <Link className='flex justify-center pt-8' to='/'> <button className="btn  text-lg text-white bg-[#0084ff] border-none"> Back To Home</button> </Link>
+         <Link className='flex justify-center pt-8' to='/'> <button className="btn  text-lg text-white bg-[#0084ff] hover:bg-black"> Back To Home</button> </Link>
     </fieldset>
   </form>
 </div>

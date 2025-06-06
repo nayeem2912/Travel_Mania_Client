@@ -9,6 +9,8 @@ import AboutUs from "../page/AboutUs";
 import Register from "../page/Register";
 import LogIn from "../page/LogIn";
 import ErrorPage from "../page/ErrorPage";
+import PackageDetails from "../page/PackageDetails";
+import BookNow from "../page/BookNow";
 
 export const router = createBrowserRouter([
   {
@@ -39,7 +41,15 @@ export const router = createBrowserRouter([
         {
             path:'/login',
             Component:LogIn,
-        }
+        },
+        {
+            path:'/details',
+            Component:PackageDetails,
+        },
+        {
+            path:'/bookNow',
+            Component:BookNow,
+        },
     ]
   },
 ]);
