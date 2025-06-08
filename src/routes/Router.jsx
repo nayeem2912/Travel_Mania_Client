@@ -13,6 +13,7 @@ import PackageDetails from "../page/PackageDetails";
 import BookNow from "../page/BookNow";
 import AddPackage from "../page/AddPackage";
 import ManagePackage from "../page/ManagePackage";
+import UpdatePackage from "../page/UpdatePackage";
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
         {
             path:'/managePackage',
             Component:ManagePackage,
+        },
+        {
+            path:'/updatePackage',
+            Component:UpdatePackage,
         },
     ]
   },

@@ -9,7 +9,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 const FeatureCard = () => {
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-            <div className="card  bg-gray-50 card-xl  shadow-sm">
+            <div className="card  bg-gray-50 card-xl  shadow-lg">
   <div className="card-body">
   <div className='flex justify-center'>
     <img className='w-70 h-70 rounded-xl ' src='/public/download (1).jpeg' alt="" />

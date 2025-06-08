@@ -1,13 +1,16 @@
 import React from 'react';
 
-const AddPackage = () => {
+const UpdatePackage = () => {
     return (
-        <div className='w-11/12 mx-auto my-8'>
-            <h1 className='font-extrabold mt-9 text-center text-4xl'>Add New Travel Package
+        <div className='w-11/12 mx-auto my-10'>
+            <h1 className='font-bold text-4xl text-center'>Update My Travel Package</h1>
 
-</h1>
+            <p className='font-medium text-center text-2xl mt-8'>
+               Modify your existing travel package details with ease. Update destinations, pricing, schedules, or any other information to keep your package offerings accurate and up-to-date.
+            </p>
 
-<div className=' mt-10 mb-20'>
+
+            <div className=' mt-10 mb-20'>
 <form className='space-y-5'>
 <div className='grid grid-cols-1  md:grid-cols-2 gap-6 '>
       
@@ -193,14 +196,13 @@ const AddPackage = () => {
 </fieldset>
 </div>
 
-<input type="submit" className='btn w-full hover:bg-black bg-gray-50 text-gray-800 hover:text-white' value="Add Package" />
+<input type="submit" className='btn w-full hover:bg-black bg-gray-50 text-gray-800 hover:text-white' value="Update Package" />
 </form>
 
 
 </div>
-
         </div>
     );
 };
 
-export default AddPackage;
+export default UpdatePackage;
