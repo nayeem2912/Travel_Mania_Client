@@ -37,20 +37,44 @@ const AboutUs = () => {
           <div className='mt-10'>
             <h1 className='font-bold text-4xl text-center'>What We Offer</h1>
 
-            <div className=''> 
+            <div className='flex flex-col md:flex-row justify-center items-center mt-10'> 
                 <div className="chat  chat-start">
-  <div className="chat-bubble chat-bubble-primary">Custom travel packages</div>
-</div>
-                <div className="chat  chat-start">
-  <div className="chat-bubble chat-bubble-primary">Affordable deals</div>
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary ">Custom travel packages</div>
 </div>
                 <div className="chat  chat-start">
-  <div className="chat-bubble chat-bubble-primary">Fast and friendly customer service
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary">Affordable deals</div>
+</div>
+                <div className="chat  chat-start">
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary">Fast and friendly customer service
 </div>
 </div>
                 <div className="chat  chat-start">
-  <div className="chat-bubble chat-bubble-primary">Group and solo travel options</div>
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary">Group and solo travel options</div>
 </div>
+                <div className="chat  chat-start">
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary">Domestic and international destinations</div>
+</div>
+                
+            </div>
+            </div>  
+          <div className='mt-10'>
+            <h1 className='font-bold text-4xl text-center'>Why Choose Travel Mania?</h1>
+
+            <div className='flex flex-col md:flex-row justify-center items-center mt-10'> 
+                <div className="chat  chat-start">
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary ">Trusted by thousands of travelers</div>
+</div>
+                <div className="chat  chat-start">
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary">Verified accommodations and tours</div>
+</div>
+                <div className="chat  chat-start">
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary">Easy online booking system
+</div>
+</div>
+                <div className="chat  chat-start">
+  <div className="chat-bubble font-semibold text-xl chat-bubble-primary">Secure payment gateway</div>
+</div>
+                
                 
             </div>
             </div>  

@@ -14,10 +14,7 @@ const Feature = () => {
 
 <div className='text-center'>
     <Link to='/allPackage'>
-       <a  class="relative inline-block px-4 py-2 font-medium group"> 
-    <span class="absolute inset-0 w-full h-full bg-[#0084ff]  group-hover:bg-black"></span>
-    <span class="relative text-white group-hover:text-white">Explore All Packages</span>
-</a>
+       <button className="btn border-none hover:bg-black bg-[#0084ff] text-white">Explore All Package</button>
       </Link>
 </div>
         </div>

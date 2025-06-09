@@ -28,17 +28,10 @@ const FeatureCard = () => {
       <div className='flex space-x-2 text-gray-800 justify-center items-center '><IoPricetags />
      <p className="font-semibold ">Price <span className='font-light'>(per person)</span> : BDT 5500</p>
         </div>
-      <div className='flex items-center text-gray-800 justify-center  '><RiGuideFill />
-     <p className="font-semibold ">Guide by:    <div className="avatar">
-  <div className="w-12 rounded">
-    <img
-      src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
-      alt="Tailwind-CSS-Avatar-component"
-    />
-   
-    </div>
-     
-  </div> Faruk Hossain</p>
+      <div className='flex items-center text-gray-800 justify-center  '><RiGuideFill /> <p className="font-semibold flex gap-2 items-center text-gray-800">
+       Guide By: <img className='w-12 h-12 rounded' src="https://img.daisyui.com/images/profile/demo/superperson@192.webp" alt="" /> Faruk
+      </p>
+    
         </div>
      </div>
   
@@ -51,63 +44,7 @@ const FeatureCard = () => {
 
   </div>
 </div>
-            <div className="card  bg-base-300 card-xl  shadow-sm">
-  <div className="card-body">
-  <div className='flex justify-center'>
-    <img className='w-50 h-50 rounded-xl ' src='' alt="" />
-    </div>
-    <h2 className="font-bold text-[#0EA106] text-center text-2xl"></h2>
-    <p className=' text-center font-medium'></p>
-  
-  </div>
-</div>
-            <div className="card  bg-base-300 card-xl  shadow-sm">
-  <div className="card-body">
-  <div className='flex justify-center'>
-    <img className='w-50 h-50 rounded-xl ' src='' alt="" />
-    </div>
-    <h2 className="font-bold text-[#0EA106] text-center text-2xl"></h2>
-    <p className=' text-center font-medium'></p>
- 
-
-  </div>
-</div>
-            <div className="card  bg-base-300 card-xl  shadow-sm">
-  <div className="card-body">
-  <div className='flex justify-center'>
-    <img className='w-50 h-50 rounded-xl ' src='' alt="" />
-    </div>
-    <h2 className="font-bold text-[#0EA106] text-center text-2xl"></h2>
-    <p className=' text-center font-medium'></p>
-   
-
-  </div>
-</div>
-            <div className="card  bg-base-300 card-xl  shadow-sm">
-  <div className="card-body">
-  <div className='flex justify-center'>
-    <img className='w-50 h-50 rounded-xl ' src='' alt="" />
-    </div>
-    <h2 className="font-bold text-[#0EA106] text-center text-2xl"></h2>
-    <p className=' text-center font-medium'></p>
- 
- <div className="card-actions justify-end">
-      <button className="btn bg-[#0084ff] text-white">Buy Now</button>
-    </div>
-
-  </div>
-</div>
-            <div className="card  bg-base-300 card-xl  shadow-sm">
-  <div className="card-body">
-  <div className='flex justify-center'>
-    <img className='w-50 h-50 rounded-xl ' src='' alt="" />
-    </div>
-    <h2 className="font-bold text-[#0EA106] text-center text-2xl"></h2>
-    <p className=' text-center font-medium'></p>
-   
-
-  </div>
-</div>
+           
         </div>
     );
 };

@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 const PackageDetails = () => {
     return (
         <div className='w-11/12 mx-auto my-16'>
-            <div className="card card-side flex-col lg:flex-row bg-gray-50 text-gray-800 border-1 border-black shadow-sm">
+            <div className="card card-side flex-col lg:flex-row bg-gray-50 text-gray-800 border-1 border-black shadow-lg">
   <figure>
     <img className=' p-10'
       src="/public/download (1).jpeg"
@@ -83,10 +83,7 @@ const PackageDetails = () => {
     
     <div className="card-actions justify-end">
       <Link to='/bookNow'>
-       <a  class="relative inline-block px-4 py-2 font-medium group"> 
-    <span class="absolute inset-0 w-full h-full bg-[#0084ff]  group-hover:bg-black"></span>
-    <span class="relative text-white group-hover:text-white">Book Now</span>
-</a>
+     <button className="btn border-none hover:bg-black bg-[#0084ff] text-white">Book Now</button>
       </Link>
     </div>
   </div>
