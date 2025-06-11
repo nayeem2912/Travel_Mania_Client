@@ -1,6 +1,43 @@
-import React from 'react';
+import React, { use } from 'react';
+import { AuthContext } from '../context/AuthContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
 
 const AddPackage = () => {
+
+const { user } = use(AuthContext)
+console.log(user)
+
+
+
+  const handlePackage = (e) => {
+     e.preventDefault()
+    const form = e.target ;
+     const formData = new FormData(form)
+    const newPackage = Object.fromEntries(formData.entries())
+    newPackage.email = user?.email;
+    newPackage.status = "Pending";
+    newPackage.booking_Count = 85;
+    axios.post('http://localhost:3000/addPackage', newPackage)
+    .then(data => {
+      if(data){
+         Swal.fire({
+          title: 'Good job!',
+          text: 'Package Added Successfully',
+          icon: 'success',
+        })
+      }
+    }
+  )
+   .catch(error => {
+      toast(error)
+    })
+
+    form.reset()
+  }
+
+
     return (
         <div className='w-11/12 mx-auto my-8'>
             <h1 className='font-extrabold mt-9 text-center text-4xl'>Add New Travel Package
@@ -8,7 +45,7 @@ const AddPackage = () => {
 </h1>
 
 <div className=' mt-10 mb-20'>
-<form className='space-y-5'>
+<form onSubmit={handlePackage} className='space-y-5'>
 <div className='grid grid-cols-1  md:grid-cols-2 gap-6 '>
       
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
@@ -166,7 +203,7 @@ const AddPackage = () => {
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Contact No</label>
-  <input type="text" name='contact_no'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Contact No" required />
+  <input type='text' name='contact_no'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Contact No" required />
 
 
 
@@ -178,18 +215,20 @@ const AddPackage = () => {
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Guide Name</label>
-  <input type="text" name='guide_name'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" required />
+  <input type="text" name='guide_name'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" defaultValue={user.
+displayName} readOnly required />
 
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Guide Image</label>
-  <input type="text" name='guide_photo'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" required/>
+  <input type="text" name='guide_photo'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" defaultValue={user.photoURL
+} required/>
 
 </fieldset>
 
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Guide Email</label>
-  <input type="text" name='guide_email'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" required />
+  <input type="text" name='guide_email'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" defaultValue={user.email} required />
 </fieldset>
 </div>
 

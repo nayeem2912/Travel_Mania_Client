@@ -14,6 +14,8 @@ import BookNow from "../page/BookNow";
 import AddPackage from "../page/AddPackage";
 import ManagePackage from "../page/ManagePackage";
 import UpdatePackage from "../page/UpdatePackage";
+import Loader from "../components/Loader";
+import axios from "axios";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +48,9 @@ export const router = createBrowserRouter([
             Component:LogIn,
         },
         {
-            path:'/details',
+            path:'/details/:id',
+            hydrateFallbackElement: <Loader></Loader> ,
+            loader: ({params}) => axios(`http://localhost:3000/package/${params.id}`) ,
             Component:PackageDetails,
         },
         {

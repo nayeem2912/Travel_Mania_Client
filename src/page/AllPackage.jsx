@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Package from '../components/Package';
+import axios from 'axios';
 
 const AllPackage = () => {
+
+  const [search , setSearch]= useState("");
+  const [allPackage, setAllPackage] = useState([]);
+
+  useEffect(() => {
+    axios(`http://localhost:3000/package?searchParams=${search}`)
+    .then(data => setAllPackage(data.data))
+  }, [search])
+
     return (
         <div className='w-11/12 mx-auto my-10'>
             <div>
@@ -25,12 +35,19 @@ const AllPackage = () => {
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input type="search" className="grow" placeholder="Search" />
+  <input 
+  onChange={(e) => setSearch(e.target.value)}
+  type="search"
+   className="grow" 
+   placeholder="Search" />
 </label>
             </div>
 
-            <div >
-              <Package></Package>
+            <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10'>
+              {
+                allPackage.map(packages => <Package key={packages._id} packages={packages}></Package> )
+              }
+              
             </div>
         </div>
     );
