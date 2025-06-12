@@ -39,7 +39,7 @@ const FeatureCard = ({feature}) => {
      </div>
   
   <div className="card-actions justify-end">
-    <Link to='/details'>
+    <Link to={`/details/${_id}`}>
     <button className="btn hover:bg-black bg-[#0084ff] text-white">View Details</button>
     </Link>
       

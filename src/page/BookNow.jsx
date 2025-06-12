@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const BookNow = () => {
    const data = useLoaderData();
-    const { tour_name, price} = data?.data || {};
+    const { tour_name, price, contact_no , departure_location, destination, departure_date} = data?.data || {};
 
   const { user } = use(AuthContext)
    const [booking, setBooking] = useState('');
@@ -54,12 +54,12 @@ const BookNow = () => {
                 <div className='grid grid-cols-1  md:grid-cols-2 gap-6 '>
                     <fieldset className="fieldset bg-gray-50 text-gray-800 border border-base-300 rounded-box p-4">
   <label className="label font-bold text-lg">Package Name</label>
-  <input type="text" name='tour_name' className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="" defaultValue={tour_name} required />
+  <input type="text" name='tour_name' className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="" defaultValue={tour_name} readOnly required />
 
 </fieldset>
                     <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Price</label>
-  <input type="text" name='price' className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="" defaultValue={price} required />
+  <input type="text" name='price' className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="" defaultValue={price} readOnly required />
 
 </fieldset>
                     <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
@@ -82,6 +82,29 @@ const BookNow = () => {
      value={booking}
         onChange={(e) => setBooking(e.target.value)}
      placeholder="" required />
+
+</fieldset>
+
+<fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
+  <label className="label font-bold text-lg">Departure Location</label>
+  <input type="text" name='departure_location'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="" defaultValue={departure_location} readOnly required />
+
+</fieldset>
+
+<fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
+  <label className="label font-bold text-lg">Destination</label>
+  <input type="text" name='destination'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="" defaultValue={destination} readOnly required />
+
+</fieldset>
+
+<fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
+  <label className="label font-bold text-lg">Departure Date</label>
+  <input type="text" name='departure_date'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="" readOnly defaultValue={departure_date} required />
+
+</fieldset>
+<fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
+  <label className="label font-bold text-lg">Contact No</label>
+  <input type="text" name='contact_no'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="" readOnly defaultValue={contact_no} required />
 
 </fieldset>
 

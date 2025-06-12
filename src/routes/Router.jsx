@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
             Component:AllPackage,
         },
         {
-            path:'/myBooking',
+            path:'/myBooking/:email',
             Component:MyBooking,
         },
         {

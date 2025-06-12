@@ -44,7 +44,7 @@ const Navbar = () => {
          <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/allPackage' >All Packages</NavLink>
         </li>
         <li>
-            <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/myBooking' >My Bookings</NavLink>
+            <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to={`/myBooking/${user?.email}`} >My Bookings</NavLink>
         </li>
         <li>
             <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/aboutUs' >About Us </NavLink>
