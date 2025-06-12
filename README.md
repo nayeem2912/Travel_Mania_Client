@@ -1,12 +1,63 @@
-# React + Vite
+# 🌍 Travel Mania - Tour Package Booking Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Travel Mania** is a full-stack tour package booking portal built with the **MERN Stack** and integrated with **Firebase Authentication**. It allows users to explore travel destinations, view detailed itineraries, and book their ideal trips in real-time.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 [Live Website](https://your-live-url.com)  
+🔗 [GitHub Repository (Client)](https://github.com/your-username/travel-mania-client)  
+🔗 [GitHub Repository (Server)](https://github.com/your-username/travel-mania-server)  
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎯 Project Purpose
+
+Travel Mania was created to provide users with a seamless platform to discover, evaluate, and book travel experiences effortlessly. The system allows real-time interaction and secure booking, making vacation planning easy and intuitive.
+
+---
+
+## ✨ Features
+
+- 🔐 **User Authentication** via Firebase (Email/Password & Google)
+- 🧳 **Explore Tour Packages** with high-quality visuals and summaries
+- 📅 **View Detailed Itineraries** for each package
+- ✅ **Confirm Bookings** with real-time feedback
+- 🔄 **Full CRUD Operations** (Admin/Backend Support for Packages and Bookings)
+- 📦 **Admin Panel** for managing tours and bookings
+- 📱 **Responsive Design** for mobile and desktop users
+
+---
+
+## 🛠️ Tech Stack
+
+### 🔧 Frontend:
+- **React.js** (with Hooks and Router)
+- **Tailwind CSS**  (based on your styling choice)
+- **Firebase Authentication**
+- **Axios** (for API calls)
+
+### ⚙️ Backend:
+- **Node.js**
+- **Express.js**
+- **MongoDB** (with Mongoose ODM)
+- **Firebase Admin SDK** (optional, for secure auth management)
+
+---
+
+## 📦 NPM Packages Used
+
+### Frontend
+- `react`
+- `react-dom`
+- `react-router-dom`
+- `axios`
+- `firebase`
+- `tailwindcss` 
+- `react-icons`
+- `dotenv` (for managing environment variables)
+
+---
+
+## 📁 Folder Structure (Basic)
+
