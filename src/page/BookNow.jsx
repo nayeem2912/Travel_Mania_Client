@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const BookNow = () => {
    const data = useLoaderData();
-    const { tour_name, price, contact_no , departure_location, destination, departure_date} = data?.data || {};
+    const { tour_name, price, contact_no , departure_location, destination, departure_date,_id} = data?.data || {};
 
   const { user } = use(AuthContext)
    const [booking, setBooking] = useState('');
@@ -32,6 +32,7 @@ const BookNow = () => {
           title: 'Booking successful!!',
           icon: 'success',
         })
+         
       }
     }
   )

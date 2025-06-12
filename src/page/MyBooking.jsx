@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const MyBooking = () => {
 
@@ -15,6 +16,22 @@ const MyBooking = () => {
       })
       }  
      }, [user])
+
+     const handleConfirm = (id) => {
+       axios.patch(`http://localhost:3000/my-booking/${id}/confirm`)
+       .then((res) => {
+             if (res.data.success) {
+        const updatedBooking = bookingData.map((booking) =>
+          booking._id === id ? { ...booking, status: "Confirmed" } : booking
+        );
+        setBookingData(updatedBooking);
+      }
+       })
+         .catch((error) => {
+      toast(error);
+    });
+    
+     }
 
 
     return (
@@ -57,11 +74,19 @@ const MyBooking = () => {
         <td>
               <div className="font-bold">{booked.name}</div>
           </td>
-          <td className='text-green-700 font-medium'>
-        {booked.status}
+          <td className=' font-medium'>
+            <div className="badge badge-soft badge-success">{booked.status}</div>
+        
           </td>
        <th>
-         <button className="btn hover:bg-black bg-[#0084ff] text-white">Confirm</button>
+          {booked.status === "Pending" && (
+                      <button
+                        onClick={() => handleConfirm(booked._id)}
+                        className="btn hover:bg-black bg-[#0084ff] text-white"
+                      >
+                        Confirm
+                      </button>
+                    )}
        </th>
       </tr> )
       }
