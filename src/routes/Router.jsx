@@ -25,6 +25,8 @@ export const router = createBrowserRouter([
     children:[
         {
             index:true,
+             hydrateFallbackElement: <Loader></Loader> ,
+             loader: () => axios('http://localhost:3000/feature') ,
             Component:Home
         },
         {
@@ -62,11 +64,15 @@ export const router = createBrowserRouter([
             Component:AddPackage,
         },
         {
-            path:'/managePackage',
+            path:'/managePackage/:email',
+             hydrateFallbackElement: <Loader></Loader> ,
+            loader: ({params}) => axios(`http://localhost:3000/my-package/${params.email}`) ,
             Component:ManagePackage,
         },
         {
-            path:'/updatePackage',
+            path:'/updatePackage/:id',
+            hydrateFallbackElement: <Loader></Loader> ,
+            loader: ({params}) => axios(`http://localhost:3000/package/${params.id}`) ,
             Component:UpdatePackage,
         },
     ]

@@ -1,6 +1,11 @@
 import React from 'react';
+import { useLoaderData } from 'react-router';
+
 
 const UpdatePackage = () => {
+  const data = useLoaderData();
+   const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, package_details, guide_email} = data?.data || {}
+
     return (
         <div className='w-11/12 mx-auto my-10'>
             <h1 className='font-bold text-4xl text-center'>Update My Travel Package</h1>
@@ -16,17 +21,17 @@ const UpdatePackage = () => {
       
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Tour Name</label>
-  <input type="text" name='tour_name'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Tour Name" required />
+  <input type="text" name='tour_name'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Tour Name" defaultValue={tour_name} required />
 
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Image</label>
-  <input type="text" name='photo'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Tour Image" required />
+  <input type="text" name='photo'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Tour Image" defaultValue={photo} required />
 
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Duration</label>
-  <select name='duration' defaultValue="Enter Duration" className="select w-full bg-gray-50 text-gray-800 border-1 border-black" required>
+  <select name='duration' defaultValue={duration} className="select w-full bg-gray-50 text-gray-800 border-1 border-black"  required>
     <option  disabled={true}>Enter Duration</option>
   <option value="1 Day">1 Day</option>
   <option value="2 Days, 1 Night">2 Days, 1 Night</option>
@@ -42,7 +47,7 @@ const UpdatePackage = () => {
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Departure Location</label>
  
-  <input type="text" list="districtOptions" name='departure_location'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Departure Location" required />
+  <input type="text" list="districtOptions" name='departure_location' defaultValue={departure_location}  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Departure Location" required />
 
 <datalist id="districtOptions">
   <option value="Bagerhat" />
@@ -114,12 +119,12 @@ const UpdatePackage = () => {
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Departure Date</label>
-  <input type="date" name='departure_date'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Departure Date" required/>
+  <input type="date" name='departure_date' defaultValue={departure_date}  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Departure Date" required/>
 
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Destination</label>
-  <input list="destination-list" type="text" name='destination'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Destination" />
+  <input list="destination-list" type="text" name='destination'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" defaultValue={destination} placeholder="Enter Destination" />
 
   <datalist id="destination-list">
         <option value="Cox’s Bazar" />
@@ -164,35 +169,35 @@ const UpdatePackage = () => {
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Price</label>
-  <input type="text" name='price'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Price" required />
+  <input type="text" name='price'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Price" defaultValue={price} required />
 
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Contact No</label>
-  <input type="text" name='contact_no'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Contact No" required />
+  <input type="text" name='contact_no'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Contact No" defaultValue={contact_no} required />
 
 
 
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Package Details</label>
-  <input type="text" name='package_details' className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Package Details" required />
+  <input type="text" name='package_details' className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Package Details" defaultValue={package_details} required />
 
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Guide Name</label>
-  <input type="text" name='guide_name'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" required />
+  <input type="text" name='guide_name'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" defaultValue={guide_name} required />
 
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Guide Image</label>
-  <input type="text" name='guide_photo'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" required/>
+  <input type="text" name='guide_photo' defaultValue={guide_photo}  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" required/>
 
 </fieldset>
 
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Guide Email</label>
-  <input type="text" name='guide_email'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" required />
+  <input type="text" name='guide_email' defaultValue={guide_email}  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" readOnly required />
 </fieldset>
 </div>
 

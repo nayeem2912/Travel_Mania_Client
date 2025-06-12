@@ -11,13 +11,13 @@ const Package = ({packages}) => {
   const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, _id } = packages  || {}
     return (
         <div>
-             <div className="card  bg-gray-50 card-xl  shadow-lg">
+             <div className="card  bg-gray-50 card-xl  shadow-lg h-[800px]">
               <div className="card-body">
               <div className='flex justify-center'>
                 <img className='w-70 h-70 rounded-xl ' src={photo} alt="" />
                
                 </div>
-                 <div className='ml-4 space-y-3'>
+                 <div className='ml-4 mt-5 mb-5 space-y-10'>
                     <div className='flex justify-center items-center gap-3'>
                     <FaMapMarkerAlt className='text-gray-800' /> <h2 className="font-semibold text-[#0084ff]"> {tour_name}</h2>
                 </div>

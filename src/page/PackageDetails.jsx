@@ -6,12 +6,12 @@ import { Link, useLoaderData } from 'react-router';
 
 const PackageDetails = () => {
     const data = useLoaderData();
-     const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, book_count, package_details} = data.data || {}
+     const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, book_count, package_details} = data?.data || {}
     return (
         <div className='w-11/12 mx-auto my-16'>
             <div className="card card-side flex-col lg:flex-row bg-gray-50 text-gray-800 border-1 border-black shadow-lg">
   <figure>
-    <img className='p-8 w-[500px]' 
+    <img className='p-12 md:ml-6 w-[500px]' 
       src={photo}
       alt="" />
   </figure>
@@ -27,7 +27,7 @@ const PackageDetails = () => {
   <div className="w-12 rounded">
     <img
       src={guide_photo}
-      alt="Tailwind-CSS-Avatar-component"
+      alt=""
     />
   </div>
 </div>

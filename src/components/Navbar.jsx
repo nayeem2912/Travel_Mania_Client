@@ -104,7 +104,7 @@ const Navbar = () => {
          <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/addPackage' >Add Package</NavLink>
         </li>
         <li>
-           <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-lg ':'text-lg')} to='/managePackage' >Manage My Package</NavLink>
+           <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-lg ':'text-lg')} to={`/managePackage/${user?.email}`} >Manage My Package</NavLink>
         </li>
         <li><a onClick={handleLogOut} className='font-bold text-red-700 text-lg'>Logout</a></li>
       </ul>
