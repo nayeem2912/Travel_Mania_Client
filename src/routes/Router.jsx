@@ -56,7 +56,9 @@ export const router = createBrowserRouter([
             Component:PackageDetails,
         },
         {
-            path:'/bookNow',
+            path:'/bookNow/:id',
+             hydrateFallbackElement: <Loader></Loader> ,
+            loader: ({params}) => axios(`http://localhost:3000/package/${params.id}`) ,
             Component:BookNow,
         },
         {
@@ -65,8 +67,6 @@ export const router = createBrowserRouter([
         },
         {
             path:'/managePackage/:email',
-             hydrateFallbackElement: <Loader></Loader> ,
-            loader: ({params}) => axios(`http://localhost:3000/my-package/${params.email}`) ,
             Component:ManagePackage,
         },
         {

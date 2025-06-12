@@ -1,10 +1,33 @@
+import axios from 'axios';
 import React from 'react';
 import { useLoaderData } from 'react-router';
+import Swal from 'sweetalert2';
 
 
 const UpdatePackage = () => {
   const data = useLoaderData();
-   const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, package_details, guide_email} = data?.data || {}
+   const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, package_details, guide_email, _id} = data?.data || {}
+
+
+    const handleUpdate = e =>{
+      e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const updatedPackage= Object.fromEntries(formData.entries());
+        
+
+        axios.put(`http://localhost:3000/updatePackage/${_id}`, updatedPackage)
+        .then(data => {
+            if(data?.data.modifiedCount){
+               Swal.fire({
+  title: "Package updated successfully!",
+  icon: "success",
+  draggable: true
+});
+            }
+        })
+
+    }
 
     return (
         <div className='w-11/12 mx-auto my-10'>
@@ -16,7 +39,7 @@ const UpdatePackage = () => {
 
 
             <div className=' mt-10 mb-20'>
-<form className='space-y-5'>
+<form onSubmit={handleUpdate} className='space-y-5'>
 <div className='grid grid-cols-1  md:grid-cols-2 gap-6 '>
       
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">

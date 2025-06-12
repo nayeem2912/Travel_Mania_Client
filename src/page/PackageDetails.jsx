@@ -6,7 +6,7 @@ import { Link, useLoaderData } from 'react-router';
 
 const PackageDetails = () => {
     const data = useLoaderData();
-     const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, book_count, package_details} = data?.data || {}
+     const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, book_count, package_details, _id} = data?.data || {}
     return (
         <div className='w-11/12 mx-auto my-16'>
             <div className="card card-side flex-col lg:flex-row bg-gray-50 text-gray-800 border-1 border-black shadow-lg">
@@ -89,7 +89,7 @@ const PackageDetails = () => {
     
     
     <div className="card-actions justify-end">
-      <Link to='/bookNow'>
+      <Link to={`/bookNow/${_id}`}>
      <button className="btn border-none hover:bg-black bg-[#0084ff] text-white">Book Now</button>
       </Link>
     </div>

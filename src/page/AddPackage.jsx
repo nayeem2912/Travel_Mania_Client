@@ -17,8 +17,7 @@ console.log(user)
      const formData = new FormData(form)
     const newPackage = Object.fromEntries(formData.entries())
     newPackage.email = user?.email;
-    newPackage.status = "Pending";
-    newPackage.booking_Count = 85;
+    newPackage.booking_Count = 0;
     axios.post('http://localhost:3000/addPackage', newPackage)
     .then(data => {
       if(data){

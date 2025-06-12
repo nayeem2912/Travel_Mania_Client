@@ -1,12 +1,62 @@
-import React from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { MdModeEditOutline } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { Link, useLoaderData } from 'react-router';
+import { Link} from 'react-router';
+import { AuthContext } from '../context/AuthContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 
 const PackageTable = () => {
-  const data = useLoaderData();
-  const packages = data?.data || {} 
+
+  const {user} = use(AuthContext);
+  const [packageData, setPackageData] = useState([]);
+
+
+
+  useEffect(() => {
+      if(user?.email){
+        axios(`http://localhost:3000/my-package/${user.email}`)
+      .then(data => {
+        setPackageData(data.data);
+      })
+      }  
+     }, [user])
+
+
+
+     const handleDelete = id =>{
+
+        Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+
+    axios.delete(`http://localhost:3000/package/${id}`)
+     .then(data => {
+      if (data?.data.deletedCount) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your Package has been deleted.",
+                                icon: "success"
+                            });
+                          }
+     })
+
+
+      const remainingPackage = packageData.filter(p => p._id !== id);
+     setPackageData(remainingPackage);
+    
+  }
+});
+    }
+
   
     return (
         <div className='mt-10'>
@@ -33,7 +83,7 @@ const PackageTable = () => {
     <tbody>
       {/* row 1 */}
      {
-      packages.map((pack, index) =>  <tr key={pack._id}>
+      packageData.map((pack, index) =>  <tr key={pack._id}>
         <th>
           {index + 1}
         </th>
@@ -81,7 +131,7 @@ const PackageTable = () => {
           
         </th>
         <th className="tooltip" data-tip="Delete Your Package">
-            <button className="btn bg-red-700 text-white btn-square  btn-md"><RiDeleteBinLine size={25}/></button>
+            <button onClick={() => handleDelete(pack._id)} className="btn bg-red-700 text-white btn-square  btn-md"><RiDeleteBinLine size={25}/></button>
         </th>
       </tr>)
      }
