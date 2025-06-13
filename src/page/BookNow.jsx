@@ -23,6 +23,7 @@ const BookNow = () => {
      const formData = new FormData(form)
     const newBooking = Object.fromEntries(formData.entries())
     newBooking.email = user?.email;
+    newBooking.packageId = _id;
     newBooking.status = "Pending";
 
     axios.post('http://localhost:3000/bookNow', newBooking)

@@ -22,8 +22,7 @@ console.log(user)
     .then(data => {
       if(data){
          Swal.fire({
-          title: 'Good job!',
-          text: 'Package Added Successfully',
+          title: 'Package Added Successfully!',
           icon: 'success',
         })
       }

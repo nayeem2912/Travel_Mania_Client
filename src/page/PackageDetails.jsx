@@ -6,7 +6,7 @@ import { Link, useLoaderData } from 'react-router';
 
 const PackageDetails = () => {
     const data = useLoaderData();
-     const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, book_count, package_details, _id} = data?.data || {}
+     const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, booking_Count, package_details, _id} = data?.data || {}
     return (
         <div className='w-11/12 mx-auto my-16'>
             <div className="card card-side flex-col lg:flex-row bg-gray-50 text-gray-800 border-1 border-black shadow-lg">
@@ -78,7 +78,7 @@ const PackageDetails = () => {
 
         <div className='flex  items-center gap-3'>
             <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg">Booking Count:  <span className=' text-[#0084ff]'>{book_count}</span></p>
+            <p className="font-semibold text-lg">Booking Count:  <span className=' text-[#0084ff]'>{booking_Count}</span></p>
         </div>
 
 
