@@ -20,7 +20,6 @@ const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [balance, setBalance] = useState(10000)
 
   console.log(user)
 
@@ -72,8 +71,6 @@ const AuthProvider = ({ children }) => {
     loading,
     setLoading,
     updateUser,
-    balance,
-     setBalance,
      googleSignIn,
      forgetPass
   };
