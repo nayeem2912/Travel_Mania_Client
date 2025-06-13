@@ -1,10 +1,12 @@
 import React, { use, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../context/AuthContext';
 
 const Register = () => {
+
+  const navigate = useNavigate()
 
     const {createUser, setUser, updateUser} =use(AuthContext);
       const[nameError, setNameError]= useState("")
@@ -31,7 +33,7 @@ const Register = () => {
         updateUser({displayName: name, photoURL: photo})
         .then(() => {
            setUser({...user,displayName: name, photoURL: photo });
-          
+          navigate("/")
         })
         .catch(error => {
           setUser(user)

@@ -16,6 +16,7 @@ import ManagePackage from "../page/ManagePackage";
 import UpdatePackage from "../page/UpdatePackage";
 import Loader from "../components/Loader";
 import axios from "axios";
+import PrivateRouter from "../context/PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ export const router = createBrowserRouter([
         },
         {
             path:'/myBooking/:email',
-            Component:MyBooking,
+            element:<PrivateRouter> <MyBooking></MyBooking> </PrivateRouter>
         },
         {
             path:'/aboutUs',
@@ -53,7 +54,7 @@ export const router = createBrowserRouter([
             path:'/details/:id',
             hydrateFallbackElement: <Loader></Loader> ,
             loader: ({params}) => axios(`http://localhost:3000/package/${params.id}`) ,
-            Component:PackageDetails,
+            element: <PrivateRouter><PackageDetails></PackageDetails> </PrivateRouter>
         },
         {
             path:'/bookNow/:id',
@@ -63,11 +64,11 @@ export const router = createBrowserRouter([
         },
         {
             path:'/addPackage',
-            Component:AddPackage,
+            element: <PrivateRouter> <AddPackage></AddPackage> </PrivateRouter>
         },
         {
             path:'/managePackage/:email',
-            Component:ManagePackage,
+            element: <PrivateRouter> <ManagePackage></ManagePackage>  </PrivateRouter>
         },
         {
             path:'/updatePackage/:id',
