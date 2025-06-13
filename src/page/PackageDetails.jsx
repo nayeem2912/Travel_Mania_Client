@@ -15,7 +15,7 @@ const PackageDetails = () => {
       src={photo}
       alt="" />
   </figure>
-  <div className="card-body mt-4 ">
+  <div className="card-body mt-4 ml-3">
     <div className='flex text-lg items-center gap-3'>
             <FaMapMarkerAlt className='text-gray-800' /> <p className="font-semibold text-[#0084ff]"> {tour_name} </p>
         </div>

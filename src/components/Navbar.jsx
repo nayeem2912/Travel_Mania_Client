@@ -109,7 +109,7 @@ const Navbar = () => {
         <li><a onClick={handleLogOut} className='font-bold text-red-700 text-lg'>Logout</a></li>
       </ul>
     </div>
-  </div>) : (<div>
+  </div>) : (<div className='space-x-2'>
           <Link to='/register'>
     <button className="btn btn-xs sm:btn-sm md:btn-md rounded-full  text-white font-semibold bg-[#0084ff] ">Register</button>
     </Link>

@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [balance, setBalance] = useState(10000)
 
-  
+  console.log(user)
 
   const createUser = (email, password) => {
     setLoading(true);
