@@ -3,10 +3,13 @@ import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
+
+
 const MyBooking = () => {
 
   const { user } = use(AuthContext);
   const [bookingData, setBookingData] = useState([]);
+  
 
   useEffect(() => {
       if(user?.email){
@@ -19,8 +22,8 @@ const MyBooking = () => {
 
      const handleConfirm = (id) => {
        axios.patch(`http://localhost:3000/my-booking/${id}/confirm`)
-       .then((res) => {
-             if (res.data.success) {
+       .then((result) => {
+             if (result.data.success) {
         const updatedBooking = bookingData.map((booking) =>
           booking._id === id ? { ...booking, status: "Confirmed" } : booking
         );
@@ -38,7 +41,7 @@ const MyBooking = () => {
         <div className='w-11/12 mx-auto mt-10 mb-10'>
               <div className="overflow-x-auto ">
   <table className="table">
-    {/* head */}
+    
     <thead >
       <tr>
         <th>

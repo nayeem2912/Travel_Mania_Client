@@ -3,7 +3,7 @@ import React from 'react';
 const Section = () => {
     return (
         <div className='w-11/12 mx-auto my-10'>
-             <h1 className='text-4xl my-8 text-center font-bold'>Why Should You Travel With Us</h1>
+             <h1 className='text-4xl my-8 text-center font-bold'>What Our Travelers Say</h1>
             
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5' >
 

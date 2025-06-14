@@ -4,10 +4,11 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 
+
 const AddPackage = () => {
 
 const { user } = use(AuthContext)
-console.log(user)
+
 
 
 
@@ -219,14 +220,14 @@ displayName} readOnly required />
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Guide Image</label>
-  <input type="text" name='guide_photo'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" defaultValue={user.photoURL
+  <input type="text" name='guide_photo'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" readOnly defaultValue={user.photoURL
 } required/>
 
 </fieldset>
 
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Guide Email</label>
-  <input type="text" name='guide_email'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" defaultValue={user.email} required />
+  <input type="text" name='guide_email'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Your Name" readOnly defaultValue={user.email} required />
 </fieldset>
 </div>
 

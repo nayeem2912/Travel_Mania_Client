@@ -94,12 +94,12 @@ const Register = () => {
 
 
       <label className="label font-bold text-gray-800 text-xl">Name</label>
-      <input type="text" name='name' className="input bg-gray-50 text-gray-800 border-1 border-black" placeholder="Name" />
+      <input type="text" name='name' className="input bg-gray-50 text-gray-800 border-1 border-black" placeholder="Name" required/>
       {
         nameError && <p className="text-xs text-black">{nameError}</p>
       }
       <label className="label font-bold text-gray-800 text-xl">Photo URL</label>
-      <input type="text" name='photo' className="input bg-gray-50 text-gray-800 border-1 border-black" placeholder="Photo Url" />
+      <input type="text" name='photo' className="input bg-gray-50 text-gray-800 border-1 border-black" placeholder="Photo Url" required/>
       <label className="label font-bold text-gray-800 text-xl">Email</label>
       <label className="input validator bg-gray-50 text-gray-800 border-1 border-black">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

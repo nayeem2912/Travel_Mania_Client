@@ -25,7 +25,7 @@ const Package = ({packages}) => {
                  <MdOutlineAccessTime className='text-gray-800' /> <p className="font-semibold text-gray-800">{duration}</p>
                     </div>
                   <div className='flex space-x-2 justify-center items-center '>
-                 <FaRegCalendarAlt className='text-gray-800' /> <p className="font-semibold text-gray-800">Tour Start: {departure_date}</p>
+                 <FaRegCalendarAlt className='text-gray-800' /> <p className="font-semibold text-gray-800">Departure Date: {departure_date}</p>
                     </div>
                   <div className='flex space-x-2 text-gray-800 justify-center items-center '><IoPricetags />
                  <p className="font-semibold ">Price <span className='font-light'>(per person)</span> : BDT {price}</p>
