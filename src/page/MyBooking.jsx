@@ -12,8 +12,12 @@ const MyBooking = () => {
   
 
   useEffect(() => {
-      if(user?.email){
-        axios(`http://localhost:3000/my-booking/${user.email}`)
+      if(user?.email, user?.accessToken){
+        axios(`http://localhost:3000/my-booking/${user.email}`, {
+          headers:{
+            Authorization:`Bearer ${user?.accessToken}`
+          }
+        })
       .then(data => {
         setBookingData(data.data);
       })

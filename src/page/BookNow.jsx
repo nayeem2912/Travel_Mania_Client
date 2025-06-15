@@ -1,16 +1,31 @@
 import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import { useLoaderData } from 'react-router';
+import {  useParams } from 'react-router';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const BookNow = () => {
-   const data = useLoaderData();
-    const { tour_name, price, contact_no , departure_location, destination, departure_date,_id} = data?.data || {};
+   
+   const {id} = useParams();
+   const [details, setDetails]=useState([])
+
+    const { tour_name, price, contact_no , departure_location, destination, departure_date,_id} = details || {};
 
   const { user } = use(AuthContext)
    const [booking, setBooking] = useState('');
+
+    useEffect(() => {
+        axios(`http://localhost:3000/package/${id}`, {
+           headers:{
+            Authorization: `Bearer ${user?.accessToken}`
+           }
+        })
+        .then(res => {
+            setDetails(res?.data)
+        })
+    }, [id, user])
+
 
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
@@ -26,7 +41,13 @@ const BookNow = () => {
     newBooking.packageId = _id;
     newBooking.status = "Pending";
 
-    axios.post('http://localhost:3000/bookNow', newBooking)
+    axios.post('http://localhost:3000/bookNow', newBooking, 
+      {
+      headers:{
+        Authorization:`Bearer ${user?.accessToken}`
+      }
+    }
+    )
     .then(data => {
       if(data){
          Swal.fire({

@@ -1,12 +1,31 @@
 import axios from 'axios';
-import React from 'react';
-import { useLoaderData } from 'react-router';
+import React, { use, useEffect, useState } from 'react';
+import {  useParams } from 'react-router';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../context/AuthContext';
 
 
 const UpdatePackage = () => {
-  const data = useLoaderData();
-   const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, package_details, guide_email, _id} = data?.data || {}
+ 
+  const {user } =use(AuthContext);
+  const { id } = useParams()
+  const [ details, setDetails] = useState([])
+   const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, package_details, guide_email, _id} = details || {}
+
+   const [date, setDate] = useState(duration);
+
+
+  useEffect( () => {
+            axios(`http://localhost:3000/package/${id}`, {
+           headers:{
+            Authorization: `Bearer ${user?.accessToken}`
+           }
+        })
+        .then(res => {
+            setDetails(res?.data);
+             setDate(res?.data?.duration || '');
+        })
+  }, [id, user])
 
 
     const handleUpdate = e =>{
@@ -16,7 +35,13 @@ const UpdatePackage = () => {
         const updatedPackage= Object.fromEntries(formData.entries());
         
 
-        axios.put(`http://localhost:3000/updatePackage/${_id}`, updatedPackage)
+        axios.put(`http://localhost:3000/updatePackage/${_id}`, updatedPackage,
+          {
+            headers:{
+              Authorization:`Bearer ${user?.accessToken}`
+            }
+          }
+        )
         .then(data => {
             if(data?.data.modifiedCount){
                Swal.fire({
@@ -54,9 +79,9 @@ const UpdatePackage = () => {
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Duration</label>
-  <select name='duration' defaultValue={duration} className="select w-full bg-gray-50 text-gray-800 border-1 border-black"  required>
-    <option  disabled={true}>Enter Duration</option>
-  <option value="1 Day">1 Day</option>
+  <select name='duration'  value={date}
+  onChange={(e) => setDate(e.target.value)}  className="select w-full bg-gray-50 text-gray-800 border-1 border-black"  required>
+    <option   disabled={true}>Enter Duration</option> 
   <option value="2 Days, 1 Night">2 Days, 1 Night</option>
   <option value="3 Days, 2 Nights">3 Days, 2 Nights</option>
   <option value="4 Days, 3 Nights">4 Days, 3 Nights</option>

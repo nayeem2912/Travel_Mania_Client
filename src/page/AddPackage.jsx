@@ -19,7 +19,12 @@ const { user } = use(AuthContext)
     const newPackage = Object.fromEntries(formData.entries())
     newPackage.email = user?.email;
     newPackage.booking_Count = 0;
-    axios.post('http://localhost:3000/addPackage', newPackage)
+    axios.post('http://localhost:3000/addPackage', newPackage, {
+      headers:{
+        Authorization:`Bearer ${user?.accessToken}`
+        
+      }
+    })
     .then(data => {
       if(data){
          Swal.fire({
@@ -32,7 +37,7 @@ const { user } = use(AuthContext)
    .catch(error => {
       toast(error)
     })
-
+  
     form.reset()
   }
 

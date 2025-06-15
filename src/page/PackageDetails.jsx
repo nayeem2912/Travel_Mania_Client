@@ -1,12 +1,30 @@
-import React from 'react';
+import axios from 'axios';
+import React, { use, useEffect, useState } from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
  import { GoDotFill } from "react-icons/go";
-import { Link, useLoaderData } from 'react-router';
+import { Link,  useParams } from 'react-router';
+import { AuthContext } from '../context/AuthContext';
 
 
 const PackageDetails = () => {
-    const data = useLoaderData();
-     const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, booking_Count, package_details, _id} = data?.data || {}
+    const { user} = use(AuthContext);
+    const [details, setDetails] = useState([])
+    const { id } = useParams()
+
+    const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, booking_Count, package_details, _id} = details || {}
+    
+    useEffect(() => {
+        axios(`http://localhost:3000/package/${id}`, {
+           headers:{
+            Authorization: `Bearer ${user?.accessToken}`
+           }
+        })
+        .then(res => {
+            setDetails(res?.data)
+        })
+    }, [id, user])
+
+     
     return (
         <div className='w-11/12 mx-auto my-16'>
             <div className="card card-side flex-col lg:flex-row bg-gray-50 text-gray-800 border-1 border-black shadow-lg">

@@ -15,8 +15,12 @@ const PackageTable = () => {
 
 
   useEffect(() => {
-      if(user?.email){
-        axios(`http://localhost:3000/my-package/${user.email}`)
+      if(user?.email, user?.accessToken){
+        axios(`http://localhost:3000/my-package/${user.email}`, {
+          headers:{
+            Authorization:`Bearer ${user?.accessToken}`
+          }
+        })
       .then(data => {
         setPackageData(data.data);
       })

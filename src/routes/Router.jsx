@@ -52,15 +52,11 @@ export const router = createBrowserRouter([
         },
         {
             path:'/details/:id',
-            hydrateFallbackElement: <Loader></Loader> ,
-            loader: ({params}) => axios(`http://localhost:3000/package/${params.id}`) ,
             element: <PrivateRouter><PackageDetails></PackageDetails> </PrivateRouter>
         },
         {
             path:'/bookNow/:id',
-             hydrateFallbackElement: <Loader></Loader> ,
-            loader: ({params}) => axios(`http://localhost:3000/package/${params.id}`) ,
-            Component:BookNow,
+            element: <PrivateRouter> <BookNow></BookNow> </PrivateRouter>
         },
         {
             path:'/addPackage',
@@ -72,9 +68,7 @@ export const router = createBrowserRouter([
         },
         {
             path:'/updatePackage/:id',
-            hydrateFallbackElement: <Loader></Loader> ,
-            loader: ({params}) => axios(`http://localhost:3000/package/${params.id}`) ,
-            Component:UpdatePackage,
+            element: <PrivateRouter> <UpdatePackage></UpdatePackage> </PrivateRouter>
         },
     ]
   },
