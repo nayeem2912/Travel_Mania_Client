@@ -4,9 +4,9 @@
 
 ## 🚀 Live Demo
 
-🌐 [Live Website](https://your-live-url.com)  
-🔗 [GitHub Repository (Client)](https://github.com/your-username/travel-mania-client)  
-🔗 [GitHub Repository (Server)](https://github.com/your-username/travel-mania-server)  
+🌐 [Live Website](https://travel-mania-nayeem129.netlify.app/)  
+🔗 [GitHub Repository (Client)](https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-nayeem2912)  
+🔗 [GitHub Repository (Server)](https://github.com/Programming-Hero-Web-Course4/b11a11-server-side-nayeem2912)  
 
 
 ---
