@@ -12,7 +12,7 @@ const FeatureCard = ({feature}) => {
   
     return (
         <div >
-            <div className="card  bg-gray-50 card-xl  shadow-lg h-[1000px]">
+            <div className="card  bg-gray-50 card-xl  shadow-lg h-[900px]">
   <div className="card-body">
   <div className='flex justify-center'>
     <img className='w-70 h-70 rounded-xl ' src={photo} alt="" />
