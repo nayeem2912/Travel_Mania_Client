@@ -8,7 +8,7 @@ const AllPackage = () => {
   const [allPackage, setAllPackage] = useState([]);
 
   useEffect(() => {
-    axios(`http://localhost:3000/package?searchParams=${search}`)
+    axios(`https://travel-menia-server.vercel.app/package?searchParams=${search}`)
     .then(data => setAllPackage(data.data))
   }, [search])
 

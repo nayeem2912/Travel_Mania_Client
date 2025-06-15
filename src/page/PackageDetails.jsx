@@ -14,7 +14,7 @@ const PackageDetails = () => {
     const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, contact_no , departure_location, destination, booking_Count, package_details, _id} = details || {}
     
     useEffect(() => {
-        axios(`http://localhost:3000/package/${id}`, {
+        axios(`https://travel-menia-server.vercel.app/package/${id}`, {
            headers:{
             Authorization: `Bearer ${user?.accessToken}`
            }

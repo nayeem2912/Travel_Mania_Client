@@ -19,7 +19,7 @@ const { user } = use(AuthContext)
     const newPackage = Object.fromEntries(formData.entries())
     newPackage.email = user?.email;
     newPackage.booking_Count = 0;
-    axios.post('http://localhost:3000/addPackage', newPackage, {
+    axios.post('https://travel-menia-server.vercel.app/addPackage', newPackage, {
       headers:{
         Authorization:`Bearer ${user?.accessToken}`
         

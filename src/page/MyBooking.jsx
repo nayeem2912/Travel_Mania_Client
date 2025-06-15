@@ -13,7 +13,7 @@ const MyBooking = () => {
 
   useEffect(() => {
       if(user?.email, user?.accessToken){
-        axios(`http://localhost:3000/my-booking/${user.email}`, {
+        axios(`https://travel-menia-server.vercel.app/my-booking/${user.email}`, {
           headers:{
             Authorization:`Bearer ${user?.accessToken}`
           }
@@ -25,7 +25,7 @@ const MyBooking = () => {
      }, [user])
 
      const handleConfirm = (id) => {
-       axios.patch(`http://localhost:3000/my-booking/${id}/confirm`)
+       axios.patch(`https://travel-menia-server.vercel.app/my-booking/${id}/confirm`)
        .then((result) => {
              if (result.data.success) {
         const updatedBooking = bookingData.map((booking) =>

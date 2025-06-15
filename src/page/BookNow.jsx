@@ -16,7 +16,7 @@ const BookNow = () => {
    const [booking, setBooking] = useState('');
 
     useEffect(() => {
-        axios(`http://localhost:3000/package/${id}`, {
+        axios(`https://travel-menia-server.vercel.app/package/${id}`, {
            headers:{
             Authorization: `Bearer ${user?.accessToken}`
            }
@@ -41,7 +41,7 @@ const BookNow = () => {
     newBooking.packageId = _id;
     newBooking.status = "Pending";
 
-    axios.post('http://localhost:3000/bookNow', newBooking, 
+    axios.post('https://travel-menia-server.vercel.app/bookNow', newBooking, 
       {
       headers:{
         Authorization:`Bearer ${user?.accessToken}`

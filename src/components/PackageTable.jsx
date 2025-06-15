@@ -16,7 +16,7 @@ const PackageTable = () => {
 
   useEffect(() => {
       if(user?.email, user?.accessToken){
-        axios(`http://localhost:3000/my-package/${user.email}`, {
+        axios(`https://travel-menia-server.vercel.app/my-package/${user.email}`, {
           headers:{
             Authorization:`Bearer ${user?.accessToken}`
           }
@@ -42,7 +42,7 @@ const PackageTable = () => {
 }).then((result) => {
   if (result.isConfirmed) {
 
-    axios.delete(`http://localhost:3000/package/${id}`)
+    axios.delete(`https://travel-menia-server.vercel.app/package/${id}`)
      .then(data => {
       if (data?.data.deletedCount) {
                             Swal.fire({

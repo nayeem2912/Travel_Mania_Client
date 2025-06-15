@@ -16,7 +16,7 @@ const UpdatePackage = () => {
 
 
   useEffect( () => {
-            axios(`http://localhost:3000/package/${id}`, {
+            axios(`https://travel-menia-server.vercel.app/package/${id}`, {
            headers:{
             Authorization: `Bearer ${user?.accessToken}`
            }
@@ -35,7 +35,7 @@ const UpdatePackage = () => {
         const updatedPackage= Object.fromEntries(formData.entries());
         
 
-        axios.put(`http://localhost:3000/updatePackage/${_id}`, updatedPackage,
+        axios.put(`https://travel-menia-server.vercel.app/updatePackage/${_id}`, updatedPackage,
           {
             headers:{
               Authorization:`Bearer ${user?.accessToken}`

@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
         {
             index:true,
              hydrateFallbackElement: <Loader></Loader> ,
-             loader: () => axios('http://localhost:3000/feature') ,
+             loader: () => axios('https://travel-menia-server.vercel.app/feature') ,
             Component:Home
         },
         {
