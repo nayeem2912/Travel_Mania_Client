@@ -69,7 +69,9 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-       {links}
+       {
+        user ? links : link
+      }
       </ul>
     </div>
     <img className='md:w-10 mr-2 md:h-10 w-7 h-7' src="/airplane_2200326.png" alt="" />
