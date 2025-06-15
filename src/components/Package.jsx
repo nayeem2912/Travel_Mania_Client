@@ -11,7 +11,7 @@ const Package = ({packages}) => {
   const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, _id } = packages  || {}
     return (
         <div>
-             <div className="card  bg-gray-50 card-xl  shadow-lg h-[800px]">
+             <div className="card  bg-gray-50 card-xl  shadow-lg h-[1000px]">
               <div className="card-body">
               <div className='flex justify-center'>
                 <img className='w-70 h-70 rounded-xl ' src={photo} alt="" />
@@ -30,7 +30,7 @@ const Package = ({packages}) => {
                   <div className='flex space-x-2 text-gray-800 justify-center items-center '><IoPricetags />
                  <p className="font-semibold ">Price <span className='font-light'>(per person)</span> : BDT {price}</p>
                     </div>
-                  <div className='flex items-center text-gray-800 justify-center  '><RiGuideFill /> <p className="font-semibold flex gap-2 items-center text-gray-800">
+                  <div className='flex items-center text-gray-800 justify-center  '><RiGuideFill /> <p className="font-semibold flex gap-2 items-center text-sm text-gray-800">
                    Guide By: <img className='w-12 h-12 rounded' src={guide_photo} alt="" /> {guide_name}
                   </p>
                 

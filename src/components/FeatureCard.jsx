@@ -31,7 +31,7 @@ const FeatureCard = ({feature}) => {
       <div className='flex space-x-2 text-gray-800 justify-center items-center '><IoPricetags />
      <p className="font-semibold ">Price <span className='font-light'>(per person)</span> : {price} BDT </p>
         </div>
-      <div className='flex items-center text-gray-800 justify-center  '><RiGuideFill /> <p className="font-semibold flex gap-2 items-center text-gray-800">
+      <div className='flex items-center text-gray-800 justify-center  '><RiGuideFill /> <p className="font-semibold flex gap-2 text-sm items-center text-gray-800">
        Guide By: <img className='w-12 h-12 rounded' src={guide_photo} alt="" /> {guide_name}
       </p>
     
