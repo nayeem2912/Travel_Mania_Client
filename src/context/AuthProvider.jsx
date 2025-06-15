@@ -48,7 +48,6 @@ const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    localStorage.clear() ;
     return signOut(auth);
   };
 
