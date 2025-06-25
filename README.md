@@ -47,16 +47,26 @@ Travel Mania was created to provide users with a seamless platform to discover, 
 ## 📦 NPM Packages Used
 
 ### Frontend
-- `react`
-- `react-dom`
-- `react-router-dom`
-- `axios`
-- `firebase`
-- `tailwindcss` 
-- `react-icons`
-- `dotenv` (for managing environment variables)
+| Package Name      | Version |
+| ----------------- | ------- |
+| @tailwindcss/vite | ^4.1.8  |
+| axios             | ^1.9.0  |
+| daisyui           | ^5.0.43 |
+| firebase          | ^11.9.0 |
+| lottie-react      | ^2.4.1  |
+| react             | ^19.0.0 |
+| react-countup     | ^6.5.3  |
+| react-dom         | ^19.0.0 |
+| react-hot-toast   | ^2.5.2  |
+| react-icons       | ^5.5.0  |
+| react-lottie      | ^1.2.10 |
+| react-router      | ^7.6.1  |
+| react-tooltip     | ^5.28.1 |
+| sweetalert2       | ^11.2.0 |
+| tailwindcss       | ^4.1.8  |
+
 
 ---
 
-## 📁 Folder Structure (Basic)
+
 
