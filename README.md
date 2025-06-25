@@ -19,7 +19,6 @@ Travel Mania was created to provide users with a seamless platform to discover, 
 
 ## ✨ Features
 
-- 🔐 **User Authentication** via Firebase (Email/Password & Google)
 - 🧳 **Explore Tour Packages** with high-quality visuals and summaries
 - 📅 **View Detailed Itineraries** for each package
 - ✅ **Confirm Bookings** with real-time feedback
