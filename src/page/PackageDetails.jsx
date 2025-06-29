@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { use, useEffect, useState } from 'react';
-import { FaMapMarkerAlt } from "react-icons/fa";
- import { GoDotFill } from "react-icons/go";
+import { FaUser, FaPhoneAlt, FaClock, FaMapMarkerAlt, FaPlaneDeparture, FaCalendarAlt, FaMoneyBillWave, FaUsers } from 'react-icons/fa';
 import { Link,  useParams } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
 
@@ -26,96 +25,70 @@ const PackageDetails = () => {
 
      
     return (
-        <div className='w-11/12 mx-auto my-16'>
-            <div className="card card-side flex-col lg:flex-row bg-gray-50 text-gray-800 border-1 border-black shadow-lg">
-  <figure>
-    <img className='p-12 md:ml-6 w-[500px]' 
-      src={photo}
-      alt="" />
-  </figure>
-  <div className="card-body mt-4 ml-3">
-    <div className='flex text-lg items-center gap-3'>
-            <FaMapMarkerAlt className='text-gray-800' /> <p className="font-semibold text-[#0084ff]"> {tour_name} </p>
-        </div>
-        <div>
-            <h2 className='font-bold text-lg'>Guide Information:</h2>
-            <div className='mt-2 ml-3'>
-                <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' /> <div className="avatar">
-  <div className="w-12 rounded">
-    <img
-      src={guide_photo}
-      alt=""
-    />
-  </div>
-</div>
-        </div>
-        <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-             <p className="font-semibold text-lg"><span className='text-sm'>Guide Name:</span>  {guide_name}</p> 
-        </div>
-        <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg"><span className='text-sm'>Contact No:</span> {contact_no}  </p>
+        <section className="py-16 px-4  text-gray-800">
+      <div className="max-w-5xl mx-auto bg-gray-50 rounded-xl shadow-md p-6 md:flex gap-6">
+        {/* Left: Destination Image */}
+        <div className="md:w-1/2 mb-6 md:mb-0">
+          <img
+            src={photo}
+            alt={tour_name}
+            className="w-full h-full object-cover rounded-lg"
+          />
         </div>
 
-        
+        {/* Right: Details */}
+        <div className="md:w-1/2 flex flex-col justify-between">
+          <div className="space-y-3">
+            <h2 className="text-2xl font-bold text-blue-500">{tour_name}</h2>
 
-
+            {/* Guide Info */}
+            <div className='space-y-2'>
+                <h2 className="text-xl font-bold text-black flex items-center gap-2">
+                   Guide Info:
+                </h2>
+            <div className="flex items-center gap-4 mb-2">
+              <img
+                src={guide_photo}
+                alt={guide_name}
+                className="w-14 h-14 rounded-full border-2 border-orange-500"
+              />
+              <div>
+                <h2 className="text-xl font-bold text-blue-500 flex items-center gap-2">
+                  <FaUser className="text-orange-500" /> Guide: {guide_name}
+                </h2>
+                <p className="flex items-center gap-2 text-gray-600">
+                  <FaPhoneAlt className="text-green-500" /> {contact_no}
+                </p>
+              </div>
             </div>
+                </div>
+            {/* Other Info */}
+            <p className="flex items-center gap-2"><FaClock className="text-blue-500" /> Duration: {duration}</p>
+            <p className="flex items-center gap-2"><FaMapMarkerAlt className="text-red-500" /> Departure: {departure_location}</p>
+            <p className="flex items-center gap-2"><FaPlaneDeparture className="text-purple-500" /> Destination: {destination}</p>
+            <p className="flex items-center gap-2"><FaCalendarAlt className="text-indigo-500" />Departure Date: {departure_date}</p>
+            <p className="flex items-center gap-2"><FaMoneyBillWave className="text-emerald-500" /> Price: ৳{price}</p>
+            <p className="flex items-center gap-2"><FaUsers className="text-cyan-500" /> Booked by: {booking_Count} </p>
 
+            {/* Description */}
+            <p className="mt-4 text-gray-700">
+              <span className="font-semibold">Description:</span> {package_details}
+            </p>
+          </div>
+
+          {/* Book Now Button */}
+          <div className="mt-6 text-right">
+            <Link to={`/bookNow/${_id}`}>
+            <button className="bg-blue-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-semibold shadow-md">
+              Book Now
+            </button>
+            
+            </Link>
+            
+          </div>
         </div>
-
-        
-                <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg">Duration:  <span className=' text-[#0084ff]'>{duration}</span></p>
-        </div>
-
-
-                <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg">Departure Location:  <span className=' text-[#0084ff]'>{departure_location}</span></p>
-        </div>
-
-                <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg">Destination:  <span className=' text-[#0084ff]'>{destination}</span></p>
-        </div>
-
-                <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg">Departure Date:  <span className=' text-[#0084ff]'>{departure_date}</span></p>
-        </div>
-
-
-                <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg">Price <span className='font-light'>(per person)</span> : <span className=' text-[#0084ff]'> {price} BDT</span></p>
-        </div>
-
-        <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg">Booking Count:  <span className=' text-[#0084ff]'>{booking_Count}</span></p>
-        </div>
-
-
-        <div className='flex  items-center gap-3'>
-            <GoDotFill  className='text-gray-800' />
-            <p className="font-semibold text-lg">Description:  <span className=' text-[#0084ff]'>{package_details}</span></p>
-        </div>
-    
-    
-    <div className="card-actions justify-end">
-      <Link to={`/bookNow/${_id}`}>
-     <button className="btn border-none hover:bg-black bg-[#0084ff] text-white">Book Now</button>
-      </Link>
-    </div>
-  </div>
-</div>
-
-
-        </div>
+      </div>
+    </section>
     );
 };
 

@@ -8,46 +8,33 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 
 const Package = ({packages}) => {
-  const { tour_name, photo, departure_date, price, guide_name, guide_photo, duration, _id } = packages  || {}
+  const { tour_name, photo, price, duration, _id } = packages  || {}
     return (
         <div>
-             <div className="card  bg-gray-50 card-xl  shadow-lg h-[900px]">
-              <div className="card-body">
-              <div className='flex justify-center'>
-                <img className='w-70 h-70 rounded-xl ' src={photo} alt="" />
-               
-                </div>
-                 <div className='ml-4 mt-5 mb-5 space-y-10'>
-                    <div className='flex justify-center items-center gap-3'>
-                    <FaMapMarkerAlt className='text-gray-800' /> <h2 className="font-semibold text-[#0084ff]"> {tour_name}</h2>
-                </div>
-                  <div className='flex space-x-2 justify-center items-center '>
-                 <MdOutlineAccessTime className='text-gray-800' /> <p className="font-semibold text-gray-800">{duration}</p>
-                    </div>
-                  <div className='flex space-x-2 justify-center items-center '>
-                 <FaRegCalendarAlt className='text-gray-800' /> <p className="font-semibold text-gray-800">Departure Date: {departure_date}</p>
-                    </div>
-                  <div className='flex space-x-2 text-gray-800 justify-center items-center '><IoPricetags />
-                 <p className="font-semibold ">Price <span className='font-light'>(per person)</span> : BDT {price}</p>
-                    </div>
-                  <div className='flex items-center text-gray-800 justify-center  '><RiGuideFill /> <p className="font-semibold flex gap-2 items-center text-sm text-gray-800">
-                   Guide By: <img className='w-12 h-12 rounded' src={guide_photo} alt="" /> {guide_name}
-                  </p>
-                
-                    </div>
-                 </div>
+             <div
               
-              <div className="card-actions justify-end">
-                <Link to={`/details/${_id}`}>
-                <button className="btn hover:bg-black bg-[#0084ff] text-white">View Details</button>
-                </Link>
-                  
+              className="bg-white border text-gray-800 border-gray-200 rounded-xl shadow hover:shadow-lg transition-all flex flex-col h-full"
+              data-aos="fade-up"
+            >
+              <img
+                src={photo}
+                alt={tour_name}
+                className="w-full h-48 object-cover rounded-t-xl"
+              />
+              <div className="p-4 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">{tour_name}</h3>
+                  <p className="text-sm text-gray-500 mb-1">📅 {duration}</p>
+                  <p className="text-orange-500 font-bold mb-3">BDT:{price} TK</p>
                 </div>
-            
+                <Link to={`/details/${_id}`}>
+                <button className="btn btn-sm btn-outline hover:bg-[#0084ff] w-full hover:text-white mt-auto">
+                  View Details
+                </button>
+                </Link>
+                
               </div>
-            </div>
-             
-            
+            </div>   
         </div>
     );
 };

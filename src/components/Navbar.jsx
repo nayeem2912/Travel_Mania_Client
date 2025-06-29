@@ -35,6 +35,9 @@ const Navbar = () => {
         <li>
             <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/aboutUs' >About Us </NavLink>
         </li>
+        <li>
+            <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/contact' >Contact </NavLink>
+        </li>
     </>
     const links = <>
        <li>
@@ -48,6 +51,9 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/aboutUs' >About Us </NavLink>
+        </li>
+        <li>
+            <NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/contact' >Contact </NavLink>
         </li>
     </>
     return (

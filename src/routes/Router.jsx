@@ -17,6 +17,7 @@ import UpdatePackage from "../page/UpdatePackage";
 import Loader from "../components/Loader";
 import axios from "axios";
 import PrivateRouter from "../context/PrivateRouter";
+import ContactPage from "../page/ContactPage";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
         {
             path:'/login',
             Component:LogIn,
+        },
+        {
+            path:'/contact',
+            Component:ContactPage,
         },
         {
             path:'/details/:id',
