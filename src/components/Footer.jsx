@@ -1,12 +1,12 @@
 import React from 'react';
+import Logo from './Logo/Logo';
 
 const Footer = () => {
     return (
-        <div>
-          <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+        <div className='bg-neutral'>
+          <footer  className="footer w-11/12 mx-auto sm:footer-horizontal  text-neutral-content  p-10">
   <aside>
-    <img className='w-10 mr-2 h-10' src="/airplane_2200326.png" alt="" />
-    <a className="font-bold text-4xl">Travel <span className='text-[#0084ff]'>Mania</span></a>
+    <Logo></Logo>
     <p>
     <span className='font-semibold mr-2 text-xl'>Address:</span>  123, Travel Street, Gulshan-2, Dhaka-1212, Bangladesh
     </p>

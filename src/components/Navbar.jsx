@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
+import Logo from './Logo/Logo';
 
 const Navbar = () => {
   const {user, logOut} = use(AuthContext)
@@ -74,18 +75,17 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        className=" dropdown-content bg-base-100 rounded-box z-1 mt-3 w-50 p-2 pl-4 shadow">
        {
         user ? links : link
       }
       </ul>
     </div>
-    <img className='md:w-10 mr-2 md:h-10 w-7 h-7' src="/airplane_2200326.png" alt="" />
-    <a className="font-bold text-lg md:text-4xl">Travel <span className='text-[#0084ff]'>Mania</span></a>
+    <Logo></Logo>
     
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className=" flex justify-center items-center space-x-4 px-1">
       {
         user ? links : link
       }

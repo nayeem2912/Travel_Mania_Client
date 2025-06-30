@@ -8,7 +8,7 @@ const Feature = () => {
   const features = data?.data || {};
       
     return (
-        <div className=' px-4  w-11/12 mx-auto my-10'>
+        <div className=' px-4  w-11/12 mx-auto py-10'>
              <div className="text-center mb-10 max-w-2xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Popular Travel Packages</h2>
         <p className="">

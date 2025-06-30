@@ -3,44 +3,25 @@ import React, { useState } from 'react';
 const images = [
   {
     id: 1,
-    src: 'https://via.placeholder.com/600x400?text=Travel+1',
+    src: 'https://i.ibb.co/C5trFRzN/download-26.jpg',
     alt: 'Travel Image 1',
   },
   {
     id: 2,
-    src: 'https://via.placeholder.com/600x400?text=Travel+2',
+    src: 'https://i.ibb.co/V6DqhrZ/images.jpg',
     alt: 'Travel Image 2',
   },
   {
     id: 3,
-    src: 'https://via.placeholder.com/600x400?text=Travel+3',
+    src: 'https://i.ibb.co/gL5g5hcC/download-27.jpg',
     alt: 'Travel Image 3',
   },
   {
     id: 4,
-    src: 'https://via.placeholder.com/600x400?text=Travel+4',
+    src: 'https://i.ibb.co/fGkyC7vV/download-28.jpg',
     alt: 'Travel Image 4',
   },
-  {
-    id: 5,
-    src: 'https://via.placeholder.com/600x400?text=Travel+5',
-    alt: 'Travel Image 5',
-  },
-  {
-    id: 6,
-    src: 'https://via.placeholder.com/600x400?text=Travel+6',
-    alt: 'Travel Image 6',
-  },
-  {
-    id: 7,
-    src: 'https://via.placeholder.com/600x400?text=Travel+7',
-    alt: 'Travel Image 7',
-  },
-  {
-    id: 8,
-    src: 'https://via.placeholder.com/600x400?text=Travel+8',
-    alt: 'Travel Image 8',
-  },
+  
 ];
 
 const PhotoGallery = () => {
@@ -67,15 +48,15 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-gray-50 text-gray-800">
+    <section className="py-10 px-4  ">
       <div className="max-w-3xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Travel Moments</h2>
-        <p className="text-gray-600">
+        <p className="">
           Explore beautiful travel memories captured from around the world.
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {images.map((img, index) => (
           <div
             key={img.id}

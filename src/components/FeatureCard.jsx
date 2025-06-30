@@ -26,7 +26,7 @@ const FeatureCard = ({feature}) => {
     <div>
       <h3 className="text-lg font-semibold mb-1">{tour_name}</h3>
       <p className="text-sm text-gray-500 mb-1">📅 {duration}</p>
-      <p className="text-orange-500 font-bold mb-3">BDT:{price} TK</p>
+      <p className="text-blue-500 font-bold mb-3">BDT:{price} TK</p>
     </div>
     <Link to={`/details/${_id}`}>
     <button className="btn btn-sm btn-outline hover:bg-[#0084ff] w-full hover:text-white mt-auto">
