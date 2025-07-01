@@ -159,7 +159,6 @@ const Register = () => {
           </Link>
         </p>
       
-         <Link className='flex justify-center pt-8' to='/'> <button className="btn  text-lg text-white bg-[#0084ff] hover:bg-black"> Back To Home</button> </Link>
     </fieldset>
   </form>
 </div>

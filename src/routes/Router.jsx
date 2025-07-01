@@ -18,6 +18,12 @@ import Loader from "../components/Loader";
 import axios from "axios";
 import PrivateRouter from "../context/PrivateRouter";
 import ContactPage from "../page/ContactPage";
+import DashboardLayout from "../Layout/DashboardLayout";
+import Statistics from "../components/Statistics";
+import TermsOfUse from "../page/TermsOfUse";
+import PrivacyPolicy from "../page/PrivacyPolicy";
+import BlogList from "../components/Blog/BlogList";
+import BlogDetails from "../components/Blog/BlogDetails";
 
 export const router = createBrowserRouter([
   {
@@ -35,10 +41,7 @@ export const router = createBrowserRouter([
             path:'/allPackage',
             Component:AllPackage,
         },
-        {
-            path:'/myBooking/:email',
-            element:<PrivateRouter> <MyBooking></MyBooking> </PrivateRouter>
-        },
+        
         {
             path:'/aboutUs',
             Component:AboutUs,
@@ -60,21 +63,65 @@ export const router = createBrowserRouter([
             element: <PrivateRouter><PackageDetails></PackageDetails> </PrivateRouter>
         },
         {
-            path:'/bookNow/:id',
+            path:'/term',
+            Component: TermsOfUse,
+        },
+        {
+            path:'/privacy',
+            Component: PrivacyPolicy,
+        },
+        {
+            path:'/blog',
+            Component: BlogList,
+        },
+        {
+            path:'/blog/:id',
+            Component: BlogDetails,
+        },
+        
+        
+    ]
+  },
+  {
+    path: '/dashboard',
+    element: (
+      <PrivateRouter>
+        <DashboardLayout />
+      </PrivateRouter>
+    ),
+    children:[
+        {
+          index: true,
+        element: (
+          <PrivateRouter>
+            <Statistics />
+          </PrivateRouter>
+        ),
+        },
+        {
+            path:'allPackage',
+            Component:AllPackage,
+        },
+        {
+            path:'myBooking/:email',
+            element:<PrivateRouter> <MyBooking></MyBooking> </PrivateRouter>
+        },
+        {
+            path:'bookNow/:id',
             element: <PrivateRouter> <BookNow></BookNow> </PrivateRouter>
         },
         {
-            path:'/addPackage',
+            path:'addPackage',
             element: <PrivateRouter> <AddPackage></AddPackage> </PrivateRouter>
         },
         {
-            path:'/managePackage/:email',
+            path:'managePackage/:email',
             element: <PrivateRouter> <ManagePackage></ManagePackage>  </PrivateRouter>
         },
         {
-            path:'/updatePackage/:id',
+            path:'updatePackage/:id',
             element: <PrivateRouter> <UpdatePackage></UpdatePackage> </PrivateRouter>
         },
     ]
-  },
+  }
 ]);

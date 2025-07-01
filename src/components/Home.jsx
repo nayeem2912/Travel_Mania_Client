@@ -24,10 +24,10 @@ const Home = () => {
          <Banner></Banner>
          <Feature></Feature>
          <TopDestinations></TopDestinations>
+         <PhotoGallery></PhotoGallery>
          <WhyChooseUs></WhyChooseUs>
          <HowItWorks></HowItWorks>
          <Testimonials></Testimonials>
-         <PhotoGallery></PhotoGallery>
          <Section2></Section2>
         </div>
     );

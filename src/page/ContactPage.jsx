@@ -3,11 +3,11 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactPage = () => {
   return (
-    <section className="min-h-screen py-16 px-4 bg-white text-gray-800">
+    <section className="min-h-screen py-16 px-4 ">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-blue-500 mb-2">Get in Touch</h2>
-          <p className="text-gray-600">
+          <p className="">
             Have a question or ready to plan your next adventure? Contact us today!
           </p>
         </div>
@@ -57,25 +57,25 @@ const ContactPage = () => {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full bg-gray-50 border-1 border-black text-gray-800"
                 required
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full bg-gray-50 border-1 border-black text-gray-800"
                 required
               />
             </div>
             <input
               type="text"
               placeholder="Subject"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full bg-gray-50 border-1 border-black text-gray-800 "
               required
             />
             <textarea
               placeholder="Your Message"
-              className="textarea textarea-bordered w-full h-32"
+              className="textarea textarea-bordered w-full h-32 bg-gray-50 border-1 border-black text-gray-800"
               required
             ></textarea>
             <button

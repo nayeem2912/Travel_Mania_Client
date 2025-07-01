@@ -96,9 +96,6 @@ const handleLogin = e => {
   Login with Google
 </button>
 
-      
-
-      <Link className='flex justify-center pt-8' to='/'> <button className="btn  text-lg text-white bg-[#0084ff] hover:bg-black ">Back To Home</button> </Link>
       </div>
      
     </div>

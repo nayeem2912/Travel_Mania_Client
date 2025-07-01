@@ -3,8 +3,8 @@ import Logo from './Logo/Logo';
 
 const Footer = () => {
     return (
-        <div className='bg-neutral'>
-          <footer  className="footer w-11/12 mx-auto sm:footer-horizontal  text-neutral-content  p-10">
+        <div className='bg-base-200'>
+          <footer  className="footer w-11/12 mx-auto sm:footer-horizontal   p-10">
   <aside>
     <Logo></Logo>
     <p>
@@ -21,9 +21,9 @@ const Footer = () => {
   </aside>
    <nav>
     <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+    <a href='/term' className="link link-hover">Terms of use</a>
+    <a href='/privacy' className="link link-hover">Privacy policy</a>
+    <a href='/blog' className="link link-hover">Blogs</a>
   </nav>
   <nav>
     <h6 className="footer-title">Social</h6>
@@ -64,9 +64,9 @@ const Footer = () => {
     </div>
   </nav>
 </footer>
-<footer className="footer sm:footer-horizontal footer-center bg-neutral text-base-content p-4">
+<footer className="footer bg-base-200 sm:footer-horizontal footer-center text-base-content p-4">
   <aside>
-    <p className='text-white'>Copyright © {new Date().getFullYear()} - All right reserved by Travel Mania</p>
+    <p className=' '>Copyright © {new Date().getFullYear()} - All right reserved by Travel Mania</p>
   </aside>
 </footer>
         </div>

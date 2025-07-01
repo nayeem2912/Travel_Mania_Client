@@ -129,7 +129,7 @@ const PackageTable = () => {
           </td>
 
         <th className="tooltip" data-tip=" Update Your Package">
-            <Link to={`/updatePackage/${pack._id}`}>
+            <Link to={`/dashboard/updatePackage/${pack._id}`}>
 <button className="btn bg-[#0084ff] text-white btn-square  btn-md"><MdModeEditOutline  size={25}/></button>
             </Link>
           

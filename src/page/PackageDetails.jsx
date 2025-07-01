@@ -26,7 +26,7 @@ const PackageDetails = () => {
      
     return (
         <section className="py-16 px-4  text-gray-800">
-      <div className="max-w-5xl mx-auto bg-gray-50 rounded-xl shadow-md p-6 md:flex gap-6">
+      <div className="max-w-6xl mx-auto bg-gray-50 rounded-xl shadow-md p-6 md:flex gap-6">
         {/* Left: Destination Image */}
         <div className="md:w-1/2 mb-6 md:mb-0">
           <img
@@ -54,7 +54,7 @@ const PackageDetails = () => {
               />
               <div>
                 <h2 className="text-xl font-bold text-blue-500 flex items-center gap-2">
-                  <FaUser className="text-orange-500" /> Guide: {guide_name}
+                  <FaUser className="text-blue-500" /> Guide: {guide_name}
                 </h2>
                 <p className="flex items-center gap-2 text-gray-600">
                   <FaPhoneAlt className="text-green-500" /> {contact_no}
@@ -78,8 +78,8 @@ const PackageDetails = () => {
 
           {/* Book Now Button */}
           <div className="mt-6 text-right">
-            <Link to={`/bookNow/${_id}`}>
-            <button className="bg-blue-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-semibold shadow-md">
+            <Link to={`/dashboard/bookNow/${_id}`}>
+            <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md font-semibold shadow-md">
               Book Now
             </button>
             
