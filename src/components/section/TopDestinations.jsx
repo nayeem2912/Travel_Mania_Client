@@ -53,7 +53,7 @@ const destinations = [
 
 const TopDestinations = () => {
   return (
-    <section className="py-10 px-4  ">
+    <section className="py-10 px-4 w-11/12 mx-auto ">
       <div className="text-center mb-10 max-w-2xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Top Destinations</h2>
         <p className="">

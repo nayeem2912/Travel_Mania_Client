@@ -30,7 +30,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-10 px-4  ">
+    <section className="py-10 px-4 w-11/12 mx-auto ">
       <div className="max-w-3xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Travelers Say</h2>
         <p className="">
