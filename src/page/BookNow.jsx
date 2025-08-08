@@ -15,6 +15,7 @@ const BookNow = () => {
   const { user } = use(AuthContext)
    const [booking, setBooking] = useState('');
 
+   
     useEffect(() => {
         axios(`https://travel-menia-server.vercel.app/package/${id}`, {
            headers:{
