@@ -7,12 +7,12 @@ const AllPackage = () => {
   const [search , setSearch] = useState("");
   const [sort , setSort] = useState(""); // NEW: sorting state
   const [allPackage, setAllPackage] = useState([]);
-   console.log(allPackage)
+  
 
   useEffect(() => {
     axios(`https://travel-menia-server.vercel.app/package?searchParams=${search}&sort=${sort}`)
       .then(data => setAllPackage(data.data))
-  }, [search, sort]) // Added sort dependency
+  }, [search, sort]) 
 
   return (
     <div className='w-11/12 mx-auto my-10'>
