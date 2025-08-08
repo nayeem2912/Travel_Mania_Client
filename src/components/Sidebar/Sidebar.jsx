@@ -54,12 +54,6 @@ const Sidebar = () => {
           <div className='flex flex-col justify-between flex-1 mt-6'>
             <nav>
                  
-            
-            <button
-            className='flex w-full items-center px-4 py-2 mt-5 transition-colors duration-300 transform'
-          ><NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl ')} to='/dashboard/allPackage' >All Packages</NavLink>
-            
-          </button>
             <button
             className='flex w-full items-center px-4 py-2 mt-5  transition-colors duration-300 transform'
           ><NavLink className={({isActive}) =>(isActive? 'text-[#0084ff] font-semibold text-xl ':'text-xl')} to='/dashboard/addPackage' >Add Package</NavLink>
