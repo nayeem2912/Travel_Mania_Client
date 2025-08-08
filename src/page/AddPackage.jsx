@@ -56,6 +56,7 @@ const { user } = use(AuthContext)
   <label className="label font-bold text-lg">Tour Name</label>
   <input type="text" name='tour_name'  className="input w-full bg-gray-50 text-gray-800 border-1 border-black" placeholder="Enter Tour Name" required />
 
+
 </fieldset>
       <fieldset className="fieldset bg-gray-50 text-gray-800 border-base-300 rounded-box  border p-4">
   <label className="label font-bold text-lg">Image</label>
